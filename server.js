@@ -21,7 +21,7 @@ const sess = {
     cookie: {},
     resave: false,
     saveUninitialized: true,
-    store: new SequelizedStore({
+    store: new SequelizeStore({
         db: sequelize
     })
 };
@@ -29,14 +29,20 @@ const sess = {
 //middleware, add express-session
 app.use(session(sess));
 
+
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use(routes);
+
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Jackie Chan",
+    "email": "jackie@email.com",
+    "password": "password"
+  },
+  {
+    "name": "Rachel Rend",
+    "email": "rachel@email.com",
+    "password": "password"
+  },
+  {
+    "name": "Destiny Anthony",
+    "email": "destiny@email.com",
+    "password": "password"
+  }
+]
