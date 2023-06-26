@@ -1,0 +1,23 @@
+[
+    {
+        
+        "name": "Jackie Chan",
+        "text": "Great post!",
+        "blogId": 1,
+        "userId": 1
+    },
+    {
+        
+        "name": "Stacy Tonnk",
+        "text": "This is an helpful post!",
+        "blogId": 1,
+        "userId": 1
+    },
+    {
+        
+        "name": "Randy Post",
+        "text": "Makes me think...",
+        "blogId": 1,
+        "userId": 1
+    }
+]

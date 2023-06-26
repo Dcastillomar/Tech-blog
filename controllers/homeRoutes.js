@@ -11,11 +11,23 @@ router.get('/', async (req, res) => {
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
     // Pass the blogs to the template and render 'main' view
-    res.render('main', {
+    res.render('layouts/home', {
       blogs,
     });
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.get('/login', async (req, res) => {
+  res.render('layouts/login');
+});
+
+router.get('/signup', async (req, res) => {
+  try{
+  res.render('layouts/signup');
+  } catch (err){
+    res.status(500).json(err)
   }
 });
 

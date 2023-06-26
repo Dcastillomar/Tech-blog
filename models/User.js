@@ -9,13 +9,23 @@ class User extends Model {
 }
 
 User.init(
-  {
-    name: {
+  { 
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+      last_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     email: {
-      type: DataTypes.STRING, // Add the 'email' column
+      type: DataTypes.STRING,
       allowNull: false,
     },
     password: {
@@ -34,7 +44,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user', 
+    modelName: 'user',
   }
 );
 
