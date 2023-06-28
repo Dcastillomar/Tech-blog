@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { Blog } = require('../models');
-const { Comment } = require('../models');
+const { Blog, Comment, User } = require('../models');
 
 //render all blog posts
 router.get('/', async (req, res) => {
@@ -39,6 +38,7 @@ router.get('/blogs/:id', async (req, res) => {
     const commentsData = await Comment.findAll({ where: { blogId } });
 
     const comments = commentsData.map((comment) => comment.get({ plain: true }));
+    console.log(comments);
 
     res.render('layouts/blog', {
       blog: blogData.get({ plain: true }),
@@ -48,5 +48,26 @@ router.get('/blogs/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/dashboard', async (req, res) => {
+  try {
+    const userId = req.session.userId; 
+
+    const blogData = await Blog.findAll({
+      where: { userId }
+    });
+
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
+    res.render('layouts/dashboard', {
+      blogs,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
 
 module.exports = router;
