@@ -17,10 +17,20 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 //login render
-router.get('/login', async (req, res) => {
+const redirectToDashboard = (req, res, next) => {
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+  } else {
+    next();
+  }
+};
+
+router.get('/login', redirectToDashboard, async (req, res) => {
   res.render('layouts/login');
 });
+
 //signup render
 router.get('/signup', async (req, res) => {
   try{
