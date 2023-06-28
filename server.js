@@ -18,13 +18,18 @@ const hbs = expressHandlebars.create({ helpers });
 //configure and link session object with sequelize store
 const sess = {
     secret: 'Super secret',
-    cookie: {},
+    cookie: {
+      // Set the maximum age (in milliseconds) for the session cookie
+      maxAge: 900000, // 15 minutes
+    },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
-        db: sequelize
-    })
-};
+      db: sequelize,
+      checkExpirationInterval: 15 * 60 * 1000, // Check for expired sessions every 15 minutes
+      expiration: 15 * 60 * 1000, // Expire sessions after 15 minutes
+    }),
+  };
 
 //middleware, add express-session
 app.use(session(sess));

@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS comment_db;
+CREATE DATABASE comment_db;

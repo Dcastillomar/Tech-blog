@@ -1,20 +1,20 @@
 {{#each blogs}}
-  {{#if (isEqual this.user_id currentUser.id)}}
+  {{#isEqual user_id currentUser.id}}
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>{{this.name}} {{this.date}}</h2>
-                <h3>{{this.text}}</h3>
+                <h2>{{name}} {{date}}</h2>
+                <h3>{{text}}</h3>
             </div>
         </div>
     </div>
-  {{/if}}
+  {{/isEqual}}
 {{/each}}
 
 <div class="container">
     <form id="blog-form">
         <div class="form-group">
-            <label for="blogName">Name:</label>
+            <label for="blogName">Title:</label>
             <input type="text" class="form-control" id="blogName" aria-describedby="nameInput">
         </div>
         <div class="form-group">

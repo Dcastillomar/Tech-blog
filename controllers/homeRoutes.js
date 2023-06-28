@@ -49,9 +49,14 @@ router.get('/blogs/:id', async (req, res) => {
   }
 });
 
+
 router.get('/dashboard', async (req, res) => {
   try {
-    const userId = req.session.userId; 
+    if (!req.session.user_id) {
+      return res.redirect('/login');
+    }
+
+    const userId = req.session.user_id; 
 
     const blogData = await Blog.findAll({
       where: { userId }
@@ -71,3 +76,5 @@ router.get('/dashboard', async (req, res) => {
 
 
 module.exports = router;
+
+
