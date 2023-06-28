@@ -6,18 +6,19 @@ const commentFormHandler = async (event) => {
   
   if (name && text) {
     const blogId = window.location.pathname.split('/').pop();
+    console.log(blogId, name, text )
 
-    const response = await fetch(`/api/blogs/${blogId}`, {
+    const response = await fetch(`/api/comment/blogs/${blogId}`, {
       method: 'POST',
       body: JSON.stringify({ name, text }),
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.ok) {
-      document.location.reload();
-    } else {
-      alert('Failed to comment');
-    }
+  //   if (response.ok) {
+  //     document.location.reload();
+  //   } else {
+  //     alert('Failed to comment');
+  //   }
   }
 };
 

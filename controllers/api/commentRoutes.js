@@ -3,21 +3,27 @@ const { Comment } = require('../../models');
 
   
 // Route for creating a new comment
-router.post('blogs/:id', async (req, res) => {
-    console.log('new comment route reached');
-    try {
-      const newComment = await Comment.create({
-        blogId: req.params.blogId,
-        name: req.body.name,
-        text: req.body.text,
-      });
-  
-      res.status(200).json(newComment);
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
+router.post('/blogs/:id', async (req, res) => {
+  console.log('new comment route reached');
+  try {
+    // if (!req.session.logged_in) {
+    //   // User is not logged in, redirect to the login page
+    //   res.redirect('/login');
+    //   return;
+    // }
+
+    const newComment = await Comment.create({
+      blogId: req.params.id,
+      name: req.body.name,
+      text: req.body.text,
+    });
+
+    res.status(200).json(newComment);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 
 // Route for deleting a comment

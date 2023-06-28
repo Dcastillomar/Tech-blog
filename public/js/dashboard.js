@@ -22,4 +22,4 @@ const blogFormHandler = async (event) => {
 
   document
   .querySelector('#blog-form')
-  .addEventListener('submit', blogFormHandler);
+  .addEventListener('Submit', blogFormHandler);

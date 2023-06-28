@@ -4,6 +4,7 @@ const session = require('express-session');
 const expressHandlebars = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
 
 const sequelize = require('./config/connection');
 
@@ -35,6 +36,13 @@ const sess = {
 app.use(session(sess));
 
 
+
+app.use(expressCspHeader({
+  policies: {
+    'default-src': [expressCspHeader.SELF],
+    'img-src': [expressCspHeader.SELF],
+  }
+}));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
