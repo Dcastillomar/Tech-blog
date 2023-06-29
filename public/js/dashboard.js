@@ -12,12 +12,12 @@ const blogFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
-      if (response.ok) {
-        document.location.reload('');
-      } else {
-        alert(response.statusText);
-      }
-    }
+  //     if (response.ok) {
+  //       document.location.reload('');
+  //     } else {
+  //       alert(response.statusText);
+  //     }
+     }
   };
 
   document
