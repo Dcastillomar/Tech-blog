@@ -34,3 +34,9 @@
   ## License
     
 This project is licensed under the MIT license.
+
+![Alt text](<assets/blog comments.png>)
+![Alt text](<assets/home page.png>)
+![Alt text](<assets/logged in dashboard and blog post.png>)
+![Alt text](assets/login.png)
+![Alt text](assets/signup.png)
