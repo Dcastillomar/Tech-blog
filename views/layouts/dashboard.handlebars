@@ -1,14 +1,12 @@
 {{#each blogs}}
-  {{#isEqual user_id currentUser.id}}
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>{{name}} {{date}}</h2>
-                <h3>{{text}}</h3>
+                <h2>{{this.name}} {{this.date}}</h2>
+                <h3>{{this.text}}</h3>
             </div>
         </div>
     </div>
-  {{/isEqual}}
 {{/each}}
 
 <div class="container">
@@ -25,6 +23,7 @@
             <label for="blogText">Text:</label>
             <textarea class="form-control" id="blogText" rows="10"></textarea>
         </div>
+        <input type="hidden" id="userId" value="{{userId}}">
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

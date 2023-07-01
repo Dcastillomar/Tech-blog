@@ -12,13 +12,13 @@ router.post('/blogs/:id', async (req, res) => {
     //   return;
     // }
 
-    const newComment = await Comment.create({
+    const commentData = await Comment.create({
       blogId: req.params.id,
       name: req.body.name,
       text: req.body.text,
     });
 
-    res.status(200).json(newComment);
+    res.status(200).json(commentData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
