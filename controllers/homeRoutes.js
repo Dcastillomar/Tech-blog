@@ -83,7 +83,30 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
+router.get('/newpost', async (req, res) => {
+  res.render('layouts/newblog');
+});
 
+// router.get('/blog/:id', async (req, res) => {
+//   try {
+// const blogData = await Blog.findByPk(req.params.id, {
+//   include: [
+//     User, 
+//     {model: Comment,
+//     include: [User], 
+//   },
+//   ],
+//   });
+// if (blogData) {
+//   const blog = blogData.get({ plain: true });
+
+//   res.render('layouts/editpost', { blog });
+//   }
+// } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
 

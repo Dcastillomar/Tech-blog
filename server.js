@@ -14,7 +14,6 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = expressHandlebars.create({ helpers }); 
 
 //configure and link session object with sequelize store
 const sess = {
@@ -35,6 +34,7 @@ const sess = {
 //middleware, add express-session
 app.use(session(sess));
 
+const hbs = expressHandlebars.create({ helpers }); 
 
 
 app.use(expressCspHeader({

@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Edit Post</h2>
+  <form id="edit-form" class="card-body">
+    <input type="hidden" name="blog-id" value="{{blog.id}}" />
+
+    <label class="form-label" for="blog-title">Title</label>
+   <p><input type="text" name="blog-title" value="{{blog.name}}" class="form-input" /></p>
+
+ <label class="form-label" for="blog-date">Date</label>
+    <p><input type="text" name="blog-date" value="{{blog.date}}" class="form-input" /></p>
+
+    <label class="form-label" for="blog-body">Content</label>
+    <p> <div class="col-md-8"><textarea name="blog-body" class="form-input">{{blog.text}}</textarea></p>
+</div>
+    <button type="submit" class="btn btn-primary">Update</button>
+
+    <button type="button" id="delete-btn" class="btn btn-primary">Delete</button>
+  </form>
+</div>
+
+<script src="/js/editpost.js"></script>

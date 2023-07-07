@@ -2,30 +2,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <a href="api/newpost/{{this.id}}">
                 <h2>{{this.name}} {{this.date}}</h2>
+                </a>
                 <h3>{{this.text}}</h3>
             </div>
         </div>
     </div>
 {{/each}}
-
 <div class="container">
-    <form id="blog-form">
-        <div class="form-group">
-            <label for="blogName">Title:</label>
-            <input type="text" class="form-control" id="blogName" aria-describedby="nameInput">
-        </div>
-        <div class="form-group">
-            <label for="date">Date:</label>
-            <textarea class="form-control" id="blogDate" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="blogText">Text:</label>
-            <textarea class="form-control" id="blogText" rows="10"></textarea>
-        </div>
-        <input type="hidden" id="userId" value="{{userId}}">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<a href="/newpost"><button class="btn btn-primary" id="btn">Add a New Post</button> </a>
 </div>
+
 
 <script src="/js/dashboard.js"></script>
