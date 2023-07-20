@@ -37,8 +37,5 @@ This project is licensed under the MIT license.
 
 Deployed Heroku website: https://project14blog-82f331f77726.herokuapp.com/
 
-![Alt text](<assets/blog comments.png>)
-![Alt text](<assets/home page.png>)
-![Alt text](<assets/logged in dashboard and blog post.png>)
-![Alt text](assets/login.png)
-![Alt text](assets/signup.png)
+![Alt text](<assets/Tech Blog2.png>)
+![Alt text](assets/dashboard.png)
